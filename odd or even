@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+void checkOddEven() {
+    int numbers[10] = {12, 7, 5, 18, 21, 9, 2, 6, 11, 4};
+    int i;
+
+    printf("Odd or Even status of the array:\n");
+    for (i = 0; i < 10; i++) {
+        if (numbers[i] % 2 == 0) {
+            printf("%d is Even\n", numbers[i]);
+        } else {
+            printf("%d is Odd\n", numbers[i]);
+        }
+    }
+}
+
+int main() {
+    checkOddEven();
+    return 0;
+}
