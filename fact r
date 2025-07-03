@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int factorialRecursive(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * factorialRecursive(n - 1);
+}
+
+void factorial() {
+    int num = 5;
+    int result = factorialRecursive(num);
+    printf("Factorial of %d is %d\n", num, result);
+}
+
+int main() {
+    factorial();
+    return 0;
+}
