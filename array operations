@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+void insert(int arr[], int *n, int pos, int value) {
+    for(int i = *n; i > pos; i--)
+        arr[i] = arr[i - 1];
+    arr[pos] = value;
+    (*n)++;
+}
+
+void delete(int arr[], int *n, int pos) {
+    for(int i = pos; i < *n - 1; i++)
+        arr[i] = arr[i + 1];
+    (*n)--;
+}
+
+void display(int arr[], int n) {
+    for(int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+
+void main() {
+    int arr[20] = {10, 20, 30, 40, 50};
+    int n = 5;
+
+    printf("Original Array:\n");
+    display(arr, n);
+
+    insert(arr, &n, 2, 25); // Insert 25 at index 2
+    printf("After Insertion:\n");
+    display(arr, n);
+
+    delete(arr, &n, 4); // Delete element at index 4
+    printf("After Deletion:\n");
+    display(arr, n);
+}
